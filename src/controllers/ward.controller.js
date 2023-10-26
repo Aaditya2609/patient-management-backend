@@ -12,8 +12,8 @@ const getWards = async (req, res) => {
 
 const addWard = async (req, res) => {
     try {
-        const { name, capacity, specializations } = req.body
-        const newWard = new Ward({ name, capacity, specializations })
+        const { name, capacity, specializations,daysofstay } = req.body
+        const newWard = new Ward({ name, capacity, specializations,daysofstay })
         await newWard.save()
         res.status(201).json(newWard)
     }
